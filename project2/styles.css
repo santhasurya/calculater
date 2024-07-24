@@ -1,0 +1,88 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('cbg.jpg');
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center;  /* Centers the image */
+    margin: 0;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    overflow: hidden;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2rem;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #ccc;
+}
+
+.btn {
+    background-color: #e0e0e0;
+    border: none;
+    font-size: 1.5rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn[data-action="clear"] {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn[data-action="equals"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn[data-action="add"],
+.btn[data-action="subtract"],
+.btn[data-action="multiply"],
+.btn[data-action="divide"] {
+    background-color: #f0a500;
+    color: white;
+}
+
+.btn[data-action="clear"]:hover {
+    background-color: #d32f2f;
+}
+
+.btn[data-action="equals"]:hover {
+    background-color: #388e3c;
+}
+
+.btn[data-action="add"]:hover,
+.btn[data-action="subtract"]:hover,
+.btn[data-action="multiply"]:hover,
+.btn[data-action="divide"]:hover {
+    background-color: #ff8f00;
+}
+
+.btn[data-number="0"] {
+    grid-column: span 2; /* Make zero button wider */
+}
